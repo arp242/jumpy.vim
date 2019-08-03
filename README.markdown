@@ -1,9 +1,6 @@
 Filetype-specific mappings for `[[` and `]]` to jump to the next section.
 
-Adding a new filetype: add a call to `jumpy#map()` in `ftplugin/<ft>.vim.
 Currently supported filetype with their patterns:
-
-Currently supported filetypes:
 <!-- Note: generate with tbl script -->
 
     css             ^[^ \t{}/] 
@@ -11,3 +8,15 @@ Currently supported filetypes:
     html            \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ] 
     javascript      \v^\s*(function\(|var \w*\s+\=\s+function\() 
     markdown        \v(^\=\=\=|^---|^#{1,6}) 
+
+
+Adding a new filetype
+---------------------
+
+Call to `jumpy#map()` in `ftplugin/<ft>.vim`. The plugin is tested with
+[testing.vim](https://github.com/arp242/testing.vim); running the full test
+suite should be as easy as `tvim test ./...`.
+
+You can also use a `Filetype` autocmd in your local vimrc file:
+
+    autocmd Filetype myft call jumpy#map('..pattern..')

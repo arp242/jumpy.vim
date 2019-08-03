@@ -1,4 +1,9 @@
 fun! jumpy#map(pattern) abort
+	" Otherwise in Markdown the HTML mappings will override.
+	if mapcheck('[[', 'n') isnot# ''
+		return
+	endif
+
 	for l:mode in ['n', 'o', 'x']
 		exe printf('%snoremap <buffer> <silent> ]] :<C-u>call jumpy#jump("%s", "%s", "next")<CR>',
 					\ l:mode, fnameescape(a:pattern), l:mode)
@@ -35,5 +40,26 @@ fun! jumpy#jump(pattern, mode, dir) abort
 		endif
 
 		break
+	endfor
+endfun
+
+fun! jumpy#test(filename, testcase)
+	new
+	call setline(1, map(copy(a:testcase), {_, t -> l:t[1]}))
+	silent exe 'w ' . a:filename
+	silent e
+
+	normal! gg
+	let l:want = 0
+	for l:skip in map(copy(a:testcase), {_, t -> l:t[0]})
+		let l:want += 1
+		if l:skip is 0
+		  continue
+		endif
+
+		normal ]]
+		if l:want isnot line('.')
+			call Errorf('want: %d; got: %d for: %s', l:want, line('.'), getline('.'))
+		endif
 	endfor
 endfun
