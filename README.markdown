@@ -10,6 +10,9 @@ Currently supported filetype with their patterns:
     markdown        \v(^\=\=\=|^---|^#{1,6}) 
     sh              ^\w\+()[ \n]*{ 
 
+Filetypes that have mappings in standard Vim distribution: php, python, ruby,
+vim.
+
 Adding a new filetype
 ---------------------
 
