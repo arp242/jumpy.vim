@@ -6,9 +6,9 @@ Currently supported filetype with their patterns:
     css             ^[^ \t{}/] 
     go              \v^(func|type|var|const|import) 
     html            \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ] 
-    javascript      \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
+    javascript      \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\() 
     markdown        \v(^\=\=\=|^---|^#{1,6}) 
-
+    sh              ^\w\+()[ \n]*{ 
 
 Adding a new filetype
 ---------------------
