@@ -3,12 +3,13 @@ Filetype-specific mappings for `[[` and `]]` to jump to the next section.
 Currently supported filetype with their patterns:
 <!-- Note: generate with tbl script -->
 
-    css             ^[^ \t{}/] 
-    go              \v^(func|type|var|const|import) 
-    html            \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ] 
-    javascript      \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\() 
-    markdown        \v(^\=\=\=|^---|^#{1,6}) 
-    sh              ^\w\+()[ \n]*{ 
+    css             ^[^ \t{}/]
+    go              \v^(func|type|var|const|import)
+    html            \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
+    javascript      \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
+    markdown        \v(^\=\=\=|^---|^#{1,6})
+    sh              ^\w\+()[ \n]*{
+    sql             \c\v^\s*(create|begin)>
 
 Filetypes that have mappings in standard Vim distribution: php, python, ruby,
 vim.

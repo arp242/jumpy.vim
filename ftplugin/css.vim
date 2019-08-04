@@ -1,2 +1,1 @@
-call jumpy#map('^[^ \t{}/]')
-
+call jumpy#map('^[^ \t{}/]', 0)

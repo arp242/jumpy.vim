@@ -1,8 +1,12 @@
 #!/bin/sh
 
-cd ftplugin
-for f in *.vim; do
-	printf '    %-15s %s \n' \
-		"${f%%.*}" \
-		"$(grep 'jumpy#map' "$f" | sed -E 's/call jumpy#map\(['"'"'"](.*)['"'"'"]\)/\1/')"
-done
+list() {
+	for f in *.vim; do
+		printf '    %-15s %s \n' \
+			"${f%%.*}" \
+			"$(grep 'jumpy#map' "$f" | sed -E 's/call jumpy#map\(['"'"'"](.*)['"'"'"]\)/\1/')"
+	done
+}
+
+(cd ftplugin && list)
+(cd after/ftplugin && list)

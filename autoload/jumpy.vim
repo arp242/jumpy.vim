@@ -1,6 +1,6 @@
-fun! jumpy#map(pattern) abort
+fun! jumpy#map(pattern, force) abort
 	" Otherwise in Markdown the HTML mappings will override.
-	if mapcheck('[[', 'n') isnot# ''
+	if !a:force && mapcheck('[[', 'n') isnot# ''
 		return
 	endif
 
