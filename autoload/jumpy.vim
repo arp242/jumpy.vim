@@ -42,26 +42,3 @@ fun! jumpy#jump(pattern, mode, dir) abort
 		break
 	endfor
 endfun
-
-" Run a test case.
-fun! jumpy#test(filename, testcase) abort
-	new
-	call setline(1, map(copy(a:testcase), {_, t -> l:t[1]}))
-	silent exe 'w ' . a:filename
-	silent e
-
-	normal! gg
-	let l:want = 0
-	for l:skip in map(copy(a:testcase), {_, t -> l:t[0]})
-		let l:want += 1
-		if l:skip is 0
-		  continue
-		endif
-
-		" vint: -ProhibitCommandRelyOnUser
-		normal ]]
-		if l:want isnot line('.')
-			call Errorf('want: %d; got: %d for: %s', l:want, line('.'), getline('.'))
-		endif
-	endfor
-endfun
