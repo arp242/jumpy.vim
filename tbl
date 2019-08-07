@@ -4,7 +4,7 @@ list() {
 	for f in *.vim; do
 		printf '    %-15s %s \n' \
 			"${f%%.*}" \
-			"$(grep 'jumpy#map' "$f" | sed -E 's/call jumpy#map\(['"'"'"](.*)['"'"'"]\)/\1/')"
+			"$(grep 'jumpy#map' "$f" | sed -E 's/call jumpy#map\(['"'"'"](.*)['"'"'"], [01]\)/\1/')"
 	done
 }
 

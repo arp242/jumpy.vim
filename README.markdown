@@ -3,6 +3,7 @@ Filetype-specific mappings for `[[` and `]]` to jump to the next section.
 Currently supported filetype with their patterns:
 <!-- Note: generate with tbl script -->
 
+    c               \v(^\{|^\s@!.*\{$)
     css             ^[^ \t{}/]
     go              \v^(func|type|var|const|import)
     html            \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
