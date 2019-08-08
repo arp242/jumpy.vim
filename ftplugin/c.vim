@@ -1,3 +1,5 @@
+" Function and typedef opening braces
+"
 " C is hard as there is no 'function' keyword or the like.
 "
 " This checks for:

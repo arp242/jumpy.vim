@@ -1,2 +1,2 @@
-" Top-level declarations.
+" Top-level declarations
 call jumpy#map('\v^(func|type|var|const|import)')
