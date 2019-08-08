@@ -1,0 +1,1 @@
+call jumpy#map('^\w\+:')
