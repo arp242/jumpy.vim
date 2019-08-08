@@ -1,6 +1,7 @@
-fun! jumpy#map(pattern, force) abort
-	" Otherwise in Markdown the HTML mappings will override.
-	if !a:force && mapcheck('[[', 'n') isnot# ''
+fun! jumpy#map(pattern) abort
+	" Don't remap if there's already a jumpy mapping. Otherwise nested filetypes
+	" (like HTML embedded in Markdown) will override their parent.
+	if match(mapcheck('[[', 'n'), 'jumpy#jump') isnot -1
 		return
 	endif
 

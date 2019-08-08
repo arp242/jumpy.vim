@@ -8,4 +8,4 @@
 " Seems to work surprisingly well on my C codebases.
 "
 " Alternate idea: /\v^(typedef|enum|struct)@!\w
-call jumpy#map('\v(^\{|^\s@!.*\{$)', 0)
+call jumpy#map('\v(^\{|^\s@!.*\{$)')

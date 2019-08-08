@@ -1,1 +1,1 @@
-call jumpy#map('\c\v^\s*(create|begin)>', 1)
+call jumpy#map('\c\v^\s*(create|begin)>')
