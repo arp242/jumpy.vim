@@ -3,20 +3,20 @@ Filetype-specific mappings for `[[` and `]]` to jump to the next section.
 Currently supported filetype with their patterns:
 <!-- Note: generate with tbl script -->
 
-    Filetype        What it matches                          Regexp
-    --------        ---------------                          ------
-    c               Function and typedef opening braces      \v(^\{|^\s@!.*\{$)
-    css             Selectors                                ^[^ \t{}/]
-    git             Next commit in git log.                  ^commit 
-    go              Top-level declarations                   \v^(func|type|var|const|import)
-    html            Common block elements                    \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
-    javascript      Function declarations and expressions    \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
-    make            Targets                                  ^[a-zA-Z0-9 _-]\+:
-    markdown        Headers and horizontal rules             \v(^\=\=\=|^---|^#{1,6})
-    sh              Function declarations.                   ^\w\+()[ \n]*{
-    sql             CREATE and BEGIN                         \c\v^\s*(create|begin)>
-    vim             Function and augroup definitions         \v(^\s*fu%[nction]>|aug%[roup] (end)@!)
-    yaml            Top-level keys                           ^\w\+:
+    Filetype     What it matches                     Regexp
+    --------     ---------------                     ------
+    c            Function/typedef opening brace      \v(^\{|^\s@!.*\{$)
+    css          Selector                            ^[^ \t{}/]
+    git          Commit in git log                   ^commit 
+    go           Top-level declaration               \v^(func|type|var|const|import)
+    html         Common block elements               \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
+    javascript   Function declaration/expression     \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
+    make         Target                              ^[a-zA-Z0-9 _-]\+:
+    markdown     Header and horizontal rule          \v(^\=\=\=|^---|^#{1,6})
+    sh           Function declaration                ^\w\+()[ \n]*{
+    sql          CREATE and BEGIN                    \c\v^\s*(create|begin)>
+    vim          Function/augroup definition         \v(^\s*fu%[nction]>|aug%[roup] (end)@!)
+    yaml         Top-level key                       ^\w\+:
 
 This overrides the mappings for some filetypes in Vim's standard distribution
 for consistency and usefulness (e.g. `ft=vim` behaves different when it can't

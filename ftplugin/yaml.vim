@@ -1,2 +1,2 @@
-" Top-level keys
+" Top-level key
 call jumpy#map('^\w\+:')

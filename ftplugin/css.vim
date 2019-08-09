@@ -1,2 +1,2 @@
-" Selectors
+" Selector
 call jumpy#map('^[^ \t{}/]')

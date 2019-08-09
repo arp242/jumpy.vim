@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fmt='    %-15s %-40s %s\n'
+fmt='    %-12s %-35s %s\n'
 
 list() {
 	for f in *.vim; do

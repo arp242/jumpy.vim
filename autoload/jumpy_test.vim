@@ -14,7 +14,8 @@ fun! Test_jumpy() abort
 	" \ 'test.vim': [2, 6],
 
 	for [l:file, l:wantlines] in items(l:tests)
-		let l:file = g:test_packdir . '/tests/' . l:file
+		"let l:file = g:test_packdir . '/testdata/' . l:file
+		let l:file = g:test_packdir . '/autoload/testdata/' . l:file
 		if !filereadable(l:file)
 			return Errorf('unable to read "%s"', l:file)
 		endif

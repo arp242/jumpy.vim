@@ -1,4 +1,4 @@
-" Function and typedef opening braces
+" Function/typedef opening brace
 "
 " C is hard as there is no 'function' keyword or the like.
 "
