@@ -1,5 +1,6 @@
 fun! Test_jumpy() abort
 	let l:tests = {
+		\ 'Makefile':      [4, 7],
 		\ 'test.c':        [3, 12, 15],
 		\ 'test.css':      [3, 5, 7, 9],
 		\ 'test.go':       [2, 5, 7],
@@ -7,11 +8,10 @@ fun! Test_jumpy() abort
 		\ 'test.js':       [3, 5],
 		\ 'test.markdown': [4, 5, 9],
 		\ 'test.sh':       [2, 5],
+		\ 'test.sql':      [2, 5, 7],
+		\ 'test.vim':      [2, 6],
 		\ 'test.yaml':     [2, 5],
-		\ 'Makefile':      [4, 7],
 	\ }
-	" \ 'test.sql': [2, 5, 7],
-	" \ 'test.vim': [2, 6],
 
 	for [l:file, l:wantlines] in items(l:tests)
 		"let l:file = g:test_packdir . '/testdata/' . l:file

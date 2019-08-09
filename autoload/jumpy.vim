@@ -1,10 +1,4 @@
 fun! jumpy#map(pattern) abort
-	" Don't remap if there's already a jumpy mapping. Otherwise nested filetypes
-	" (like HTML embedded in Markdown) will override their parent.
-	if match(mapcheck('[[', 'n'), 'jumpy#jump') isnot -1
-		return
-	endif
-
 	for l:mode in ['n', 'o', 'x']
 		exe printf('%snoremap <buffer> <silent> ]] :<C-u>call jumpy#jump("%s", "%s", "next")<CR>',
 					\ l:mode, fnameescape(a:pattern), l:mode)
