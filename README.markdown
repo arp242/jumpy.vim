@@ -1,11 +1,10 @@
-Filetype-specific mappings for `[[` and `]]` to jump to the next section.
+Filetype-specific mappings for `[[` and `]]` to jump to the next or previous
+section.
 
 Use `g:jumpy_map` to configure the mappings:
 
     let g:jumpy_map = [']]', '[[']                     Defaults.
-
     let g:jumpy_map = ['<Leader>[', '<Leader>]']       Use Leader.
-
     let g:jumpy_map = 0                                Don't map anything.
 
 Currently supported filetype with their patterns:
@@ -25,25 +24,23 @@ Currently supported filetype with their patterns:
     vim          Function/augroup definition         \v(^\s*fu%[nction]>|aug%[roup] (end)@!)
     yaml         Top-level key                       ^\w\+:
 
-This overrides the mappings for some filetypes in Vim's standard distribution
-for consistency and usefulness (e.g. `ft=vim` behaves different when it can't
-find a match, `ft=sql` only jumps to `BEGIN` and not `CREATE`, etc.)
+This overrides mappings for some filetypes in Vim's standard distribution for
+consistency and usefulness (e.g. `ft=vim` behaves different when it can't find a
+match, `ft=sql` only jumps to `BEGIN` and not `CREATE`, etc.)
 
 Adding a new filetype
 ---------------------
 
-1. Call to `jumpy#map()` in `after/ftplugin/<ft>.vim`.
+1. Call `jumpy#map()` in `after/ftplugin/<ft>.vim`.
 
 2. Add a test in `autoload/jumpy_test.vim`; the key is a filename from
    `autoload/testdata/test.ext` and the value a list of line numbers you expect
-   it to jump to.
-
-   The plugin is tested with
+   it to jump to. The plugin is tested with
    [testing.vim](https://github.com/arp242/testing.vim); running the full test
    suite should be as easy as `tvim test ./...`.
 
 3. Use `./tbl` to create the table; the first line is used as the "what it
-   matches" columm.
+   matches" column.
 
 Alternatively, you can use a `Filetype` autocmd in your local vimrc file:
 
