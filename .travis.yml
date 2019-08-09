@@ -45,7 +45,7 @@ script: |
     set -euC
 
     cd "$HOME/.vim/pack/plugin/start/$(basename "$TRAVIS_BUILD_DIR")"
-    export TEST_VIM="$HOME/vim/bin/src/vim"
+    export TEST_VIM="$HOME/vim/bin/vim"
     $HOME/testing.vim/tvim test -p coverage.xml ./...
     $HOME/testing.vim/tvim lint ./...
   )
