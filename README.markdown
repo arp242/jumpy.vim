@@ -7,6 +7,7 @@ Currently supported filetype with their patterns:
     --------        ---------------                          ------
     c               Function and typedef opening braces      \v(^\{|^\s@!.*\{$)
     css             Selectors                                ^[^ \t{}/]
+    git             Next commit in git log.                  ^commit 
     go              Top-level declarations                   \v^(func|type|var|const|import)
     html            Common block elements                    \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
     javascript      Function declarations and expressions    \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
