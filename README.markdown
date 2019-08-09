@@ -1,7 +1,14 @@
 Filetype-specific mappings for `[[` and `]]` to jump to the next section.
 
+Use `g:jumpy_map` to configure the mappings:
+
+    let g:jumpy_map = [']]', '[[']                     Defaults.
+
+    let g:jumpy_map = ['<Leader>[', '<Leader>]']       Use Leader.
+
+    let g:jumpy_map = 0                                Don't map anything.
+
 Currently supported filetype with their patterns:
-<!-- Note: generate with tbl script -->
 
     Filetype     What it matches                     Regexp
     --------     ---------------                     ------
@@ -25,10 +32,19 @@ find a match, `ft=sql` only jumps to `BEGIN` and not `CREATE`, etc.)
 Adding a new filetype
 ---------------------
 
-Call to `jumpy#map()` in `ftplugin/<ft>.vim`. The plugin is tested with
-[testing.vim](https://github.com/arp242/testing.vim); running the full test
-suite should be as easy as `tvim test ./...`.
+1. Call to `jumpy#map()` in `after/ftplugin/<ft>.vim`.
 
-You can also use a `Filetype` autocmd in your local vimrc file:
+2. Add a test in `autoload/jumpy_test.vim`; the key is a filename from
+   `autoload/testdata/test.ext` and the value a list of line numbers you expect
+   it to jump to.
+
+   The plugin is tested with
+   [testing.vim](https://github.com/arp242/testing.vim); running the full test
+   suite should be as easy as `tvim test ./...`.
+
+3. Use `./tbl` to create the table; the first line is used as the "what it
+   matches" columm.
+
+Alternatively, you can use a `Filetype` autocmd in your local vimrc file:
 
     autocmd Filetype myft call jumpy#map('..pattern..')

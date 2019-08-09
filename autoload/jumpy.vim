@@ -1,9 +1,14 @@
 fun! jumpy#map(pattern) abort
+	let l:map = get(g:, 'jumpy_map', [']]', '[['])
+	if l:map is 0
+		return
+	endif
+
 	for l:mode in ['n', 'o', 'x']
-		exe printf('%snoremap <buffer> <silent> ]] :<C-u>call jumpy#jump("%s", "%s", "next")<CR>',
-					\ l:mode, fnameescape(a:pattern), l:mode)
-		exe printf('%snoremap <buffer> <silent> [[ :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>',
-					\ l:mode, fnameescape(a:pattern), l:mode)
+		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>',
+					\ l:mode, l:map[0], fnameescape(a:pattern), l:mode)
+		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>',
+					\ l:mode, l:map[1], fnameescape(a:pattern), l:mode)
 	endfor
 endfun
 
