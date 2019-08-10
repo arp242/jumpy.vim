@@ -4,7 +4,7 @@ fun! jumpy#map(pattern) abort
 		return
 	endif
 
-    let l:after = get(g:, 'jumpy_after', '')
+	let l:after = get(g:, 'jumpy_after', '')
 
 	for l:mode in ['n', 'o', 'x']
 		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>%s',
@@ -16,7 +16,6 @@ endfun
 
 fun! jumpy#jump(pattern, mode, dir) abort
 	" Get motion count; done here as some commands later on will reset it.
-	" -1 because the index starts from 0 in motion.
 	let l:count = v:count1
 
 	" Set context mark so user can jump back with '' or ``.
