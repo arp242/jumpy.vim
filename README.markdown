@@ -7,6 +7,11 @@ Use `g:jumpy_map` to configure the mappings:
     let g:jumpy_map = ['<Leader>[', '<Leader>]']       Use Leader.
     let g:jumpy_map = 0                                Don't map anything.
 
+Use `g:jumpy_after` to run a command after after jumping:
+
+    let g:jumpy_after = ''                             Default.
+    let g:jumpy_after = 'zz'                           Center the screen.
+
 Currently supported filetype with their patterns:
 
     Filetype     What it matches                     Regexp

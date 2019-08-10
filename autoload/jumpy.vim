@@ -4,11 +4,13 @@ fun! jumpy#map(pattern) abort
 		return
 	endif
 
+    let l:after = get(g:, 'jumpy_after', '')
+
 	for l:mode in ['n', 'o', 'x']
-		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>',
-					\ l:mode, l:map[0], fnameescape(a:pattern), l:mode)
-		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>',
-					\ l:mode, l:map[1], fnameescape(a:pattern), l:mode)
+		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>%s',
+					\ l:mode, l:map[0], fnameescape(a:pattern), l:mode, l:after)
+		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>%s',
+					\ l:mode, l:map[1], fnameescape(a:pattern), l:mode, l:after)
 	endfor
 endfun
 
