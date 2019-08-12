@@ -25,6 +25,7 @@ Currently supported filetype with their patterns:
     javascript   Function declaration/expression     \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
     make         Target                              ^[a-zA-Z0-9 _-]\+:
     markdown     Header and horizontal rule          \v(^\=\=\=|^---|^#{1,6})
+    ruby         Function, class, or module          \v^\s*%(def|class|module)>
     sh           Function declaration                ^\w\+()[ \n]*{
     sql          CREATE and BEGIN                    \c\v^\s*(create|begin)>
     vim          Function/augroup definition         \v(^\s*fu%[nction]>|aug%[roup] (end)@!)
