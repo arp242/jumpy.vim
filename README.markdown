@@ -16,19 +16,19 @@ Currently supported filetype with their patterns:
 
     Filetype     What it matches                     Regexp
     --------     ---------------                     ------
-    c            Function/typedef opening brace      \v(^\{|^\s@!.*\{$)
+    c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
     css          Selector                            ^[^ \t{}/]
     git          Commit in git log                   ^commit 
-    go           Top-level declaration               \v^(func|type|var|const|import)
+    go           Top-level declaration               \v^%(func|type|var|const|import)
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*
-    html         Common block elements               \v\<(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
-    javascript   Function declaration/expression     \v^\s*(function\s*\w|var \w*\s+\=\s+function\s*\()
+    html         Common block elements               \v\<%(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
+    javascript   Function declaration/expression     \v^\s*%(function\s*\w|var \w*\s+\=\s+function\s*\()
     make         Target                              ^[a-zA-Z0-9 _-]\+:
-    markdown     Header and horizontal rule          \v(^\=\=\=|^---|^#{1,6})
+    markdown     Header and horizontal rule          \v%(^\=\=\=|^---|^#{1,6})
     ruby         Function, class, or module          \v^\s*%(def|class|module)>
     sh           Function declaration                ^\w\+()[ \n]*{
-    sql          CREATE and BEGIN                    \c\v^\s*(create|begin)>
-    vim          Function/augroup definition         \v(^\s*fu%[nction]>|aug%[roup] (end)@!)
+    sql          CREATE and BEGIN                    \c\v^\s*%(create|begin)>
+    vim          Function/augroup definition         \v%(^\s*fu%[nction]>|aug%[roup] (end)@!)
     yaml         Top-level key                       ^\w\+:
 
 This overrides mappings for some filetypes in Vim's standard distribution for
