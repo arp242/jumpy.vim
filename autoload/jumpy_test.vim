@@ -6,7 +6,7 @@ fun! Test_jumpy() abort
 		\ 'test.go':       [2, 5, 7],
 		\ 'test.help':     [2, 4],
 		\ 'test.html':     [2, 4, 8],
-		\ 'test.js':       [3, 5],
+		\ 'test.js':       [3, 5, 9, 11],
 		\ 'test.markdown': [4, 5, 9],
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
