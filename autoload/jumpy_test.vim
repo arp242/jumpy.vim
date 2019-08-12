@@ -7,6 +7,7 @@ fun! Test_jumpy() abort
 		\ 'test.help':     [2, 4],
 		\ 'test.html':     [2, 4, 8],
 		\ 'test.js':       [3, 5, 9, 11],
+		\ 'test.lua':      [2, 5],
 		\ 'test.markdown': [4, 5, 9],
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
@@ -16,7 +17,6 @@ fun! Test_jumpy() abort
 	\ }
 
 	for [l:file, l:wantlines] in items(l:tests)
-		"let l:file = g:test_packdir . '/testdata/' . l:file
 		let l:file = g:test_packdir . '/autoload/testdata/' . l:file
 		if !filereadable(l:file)
 			return Errorf('unable to read "%s"', l:file)
