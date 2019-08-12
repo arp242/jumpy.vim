@@ -12,6 +12,7 @@ fun! Test_jumpy() abort
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
 		\ 'test.sql':      [2, 5, 7],
+		\ 'test.tex':      [3, 5, 6, 8, 10, 11, 12, 14, 16],
 		\ 'test.vim':      [2, 6],
 		\ 'test.yaml':     [2, 5],
 	\ }
