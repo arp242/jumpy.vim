@@ -9,6 +9,8 @@ fun! Test_jumpy() abort
 		\ 'test.js':       [3, 5, 9, 11],
 		\ 'test.lua':      [2, 5],
 		\ 'test.markdown': [4, 5, 9],
+		\ 'test.php':      [4, 5, 8, 11, 15, 18, 20],
+		\ 'test.py':       [2, 4, 5, 8, 9],
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
 		\ 'test.sql':      [2, 5, 7],
