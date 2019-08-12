@@ -11,6 +11,7 @@ fun! Test_jumpy() abort
 		\ 'test.sql':      [2, 5, 7],
 		\ 'test.vim':      [2, 6],
 		\ 'test.yaml':     [2, 5],
+		\ 'test.help':     [2, 4],
 	\ }
 
 	for [l:file, l:wantlines] in items(l:tests)

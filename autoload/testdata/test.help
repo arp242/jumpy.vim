@@ -1,0 +1,9 @@
+
+Help on help files					*helphelp*
+
+			*help* *<Help>* *:h* *:help* *<F1>* *i_<F1>* *i_<Help>*
+<Help>		or
+:h[elp]			Open a window and display the help file in read-only
+			mode.  If there is a help window open already, use
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
