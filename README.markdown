@@ -18,6 +18,7 @@ Currently supported filetype with their patterns:
     --------     ---------------                     ------
     c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
     css          Selector                            ^[^ \t{}/]
+    diff         File                                ^diff 
     git          Commit in git log                   ^commit 
     go           Top-level declaration               \v^%(func|type|var|const|import)
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*

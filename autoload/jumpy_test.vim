@@ -3,6 +3,7 @@ fun! Test_jumpy() abort
 		\ 'Makefile':      [4, 7],
 		\ 'test.c':        [3, 12, 15],
 		\ 'test.css':      [3, 5, 7, 9],
+		\ 'test.diff':     [2, 10],
 		\ 'test.go':       [2, 5, 7],
 		\ 'test.help':     [2, 4],
 		\ 'test.html':     [2, 4, 8],
