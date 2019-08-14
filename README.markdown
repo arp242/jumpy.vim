@@ -29,6 +29,7 @@ Currently supported filetype with their patterns:
     markdown     Header and horizontal rule          \v%(^\=\=\=|^---|^#{1,6})
     php          Function, class, interface          \v^\s*%(%(abstract\s+|final\s+|private\s+|public\s+|protected\s|static\s+)*function|%(abstract\s+|final\s+)*class|interface)>
     python       Function, method, class             \v^(class|\s*def|\s*async def)>
+    qf           Beginning of file chunk             \v^([^\|]+).*\n\1@!\zs
     ruby         Function, class, or module          \v^\s*%(def|class|module)>
     sh           Function declaration                ^\w\+()[ \n]*{
     sql          CREATE and BEGIN                    \c\v^\s*%(create|begin)>

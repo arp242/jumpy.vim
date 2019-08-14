@@ -12,6 +12,7 @@ fun! Test_jumpy() abort
 		\ 'test.markdown': [4, 5, 9],
 		\ 'test.php':      [4, 5, 8, 11, 15, 18, 20],
 		\ 'test.py':       [2, 4, 5, 8, 9],
+		\ 'test.qf':       [1, 8, 9, 12, 13, 14],
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
 		\ 'test.sql':      [2, 5, 7],
