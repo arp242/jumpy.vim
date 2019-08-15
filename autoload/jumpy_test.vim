@@ -12,7 +12,7 @@ fun! Test_jumpy() abort
 		\ 'test.markdown': [4, 5, 9],
 		\ 'test.php':      [4, 5, 8, 11, 15, 18, 20],
 		\ 'test.py':       [2, 4, 5, 8, 9],
-		\ 'test.qf':       [1, 8, 9, 12, 13, 14],
+		\ 'test.qf':       [2, 3, 6, 7, 8],
 		\ 'test.rb':       [2, 5, 6, 7],
 		\ 'test.sh':       [2, 5],
 		\ 'test.sql':      [2, 5, 7],
@@ -27,12 +27,14 @@ fun! Test_jumpy() abort
 			return Errorf('unable to read "%s"', l:file)
 		endif
 		exe 'e ' . l:file
+		if &filetype is# ''
+			let &filetype=fnamemodify(l:file, ':e')
+		endif
 
 		" Should jump to last line if there are no more matches (also tests if
 		" there are no matches after wantlines).
 		" This is why test files should end with a blank line!
 		let l:wantlines = add(l:wantlines, line('$'))
-
 		normal! gg
 		for l:want in l:wantlines
 			" vint: -ProhibitCommandRelyOnUser
