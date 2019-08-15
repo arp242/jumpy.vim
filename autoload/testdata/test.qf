@@ -1,0 +1,12 @@
+foo.txt|1 col 6| error
+bar.txt|3 col 242| error
+baz.txt|242 col 1| error
+baz.txt|242 col 1| error
+baz.txt|242 col 1| error
+boz.txt|242 col 1| error
+biz.txt|242 col 1| error
+buz.txt|242 col 1| error
+buz.txt|242 col 1| error
+buz.txt|242 col 1| error
+buz.txt|242 col 1| error
+
