@@ -28,8 +28,12 @@ fun! jumpy#jump(pattern, mode, dir) abort
 
 	let l:save = winsaveview()
 	for l:i in range(l:count)
-		let l:loc = search(a:pattern, 'W' . (a:dir is# 'prev' ? 'b' : ''))
+		let l:loc = search(a:pattern, 'Wz' . (a:dir is# 'prev' ? 'b' : ''))
 		if l:loc > 0
+			" Jump to first non-whitespace if cursor is on leading whitespace.
+			if getline('.')[:col('.') - 1] =~# '^\s*$'
+				normal! ^
+			endif
 			continue
 		endif
 

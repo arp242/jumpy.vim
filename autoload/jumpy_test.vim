@@ -28,7 +28,7 @@ fun! Test_jumpy() abort
 		endif
 		exe 'e ' . l:file
 		if &filetype is# ''
-			let &filetype=fnamemodify(l:file, ':e')
+			let &filetype = fnamemodify(l:file, ':e')
 		endif
 
 		" Should jump to last line if there are no more matches (also tests if
@@ -41,7 +41,23 @@ fun! Test_jumpy() abort
 			normal ]]
 
 			if l:want isnot line('.')
-				call Errorf("wrong line for %s\nwant: line %d -> %s\ngot:  line %d -> %s",
+				call Errorf("wrong line for %s ]]\nwant: line %d -> %s\ngot:  line %d -> %s",
+							\ fnamemodify(l:file, ':t'),
+							\ l:want, getline(l:want),
+							\ line('.'), getline('.'))
+			endif
+		endfor
+
+		" Test going backwards
+		let l:wantlines = [1] + l:wantlines[:-2]
+		call reverse(l:wantlines)
+		normal! G
+		for l:want in l:wantlines
+			" vint: -ProhibitCommandRelyOnUser
+			normal [[
+
+			if l:want isnot line('.')
+				call Errorf("wrong line for %s [[\nwant: line %d -> %s\ngot:  line %d -> %s",
 							\ fnamemodify(l:file, ':t'),
 							\ l:want, getline(l:want),
 							\ line('.'), getline('.'))
