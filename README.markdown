@@ -34,7 +34,7 @@ Currently supported filetype with their patterns:
     sh           Function declaration                ^\w\+()[ \n]*{
     sql          CREATE and BEGIN                    \c\v^\s*%(create|begin)>
     tex          Beginning of a section              \v\s*\\%(%(sub)*section|chapter|part|appendix|%(front|back|main)matter)>
-    vim          Function/augroup definition         \v%(^\s*fu%[nction]>|aug%[roup] (end)@!)
+    vim          Function/augroup definition         \v^\s*%(fu%[nction]>|aug%[roup]\s%(\s*[eE][nN][dD])@!)
     yaml         Top-level key                       ^\w\+:
 
 This overrides mappings for some filetypes in Vim's standard distribution for
