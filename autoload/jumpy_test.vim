@@ -17,7 +17,7 @@ fun! Test_jumpy() abort
 		\ 'test.sh':       [2, 5],
 		\ 'test.sql':      [2, 5, 7],
 		\ 'test.tex':      [3, 5, 6, 8, 10, 11, 12, 14, 16],
-		\ 'test.vim':      [2, 6],
+		\ 'test.vim':      [2, 6, 16, 21, 26],
 		\ 'test.yaml':     [2, 5],
 	\ }
 
