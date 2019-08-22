@@ -15,7 +15,7 @@ cache:
 matrix:
   include:
     - env: 'VIM_VERSION=v8.0.0400'
-    #- env: 'VIM_VERSION=v8.0.1400'
+    - env: 'NVIM_VERSION=v0.3.2'
 
 install: |
   set -e
@@ -24,12 +24,22 @@ install: |
   cd ~
   mkdir -p ~/.vim/pack/plugin/start
   mv "$TRAVIS_BUILD_DIR" ~/.vim/pack/plugin/start
+  ln -s ~/.vim/pack/plugin/start/* "$TRAVIS_BUILD_DIR"
 
-  # Install Vim if there it doesn't exist yet.
+  # Install Vim or Neovim if there it doesn't exist yet.
   if [ ! -e "$HOME/vim/bin/vim" ]; then
-    git clone -q --depth 1 --branch "$VIM_VERSION" https://github.com/vim/vim $HOME/vim-src
-    ( cd $HOME/vim-src && ./configure --prefix $HOME/vim --with-features=huge --disable-gui )
-    ( cd $HOME/vim-src && make install )
+    # Neovim
+    if [ "${NVIM_VERSION:-}" != "" ]; then
+      curl -Ls https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux64.tar.gz | tar xzf - -C /tmp/
+      rm -r "$HOME/vim"
+      mv "/tmp/nvim-linux64"  "$HOME/vim"
+      mv "$HOME/vim/bin/nvim" "$HOME/vim/bin/vim"
+    # Vim
+    else
+      git clone -q --depth 1 --branch "$VIM_VERSION" https://github.com/vim/vim $HOME/vim-src
+      ( cd $HOME/vim-src && ./configure --prefix $HOME/vim --with-features=huge --disable-gui )
+      ( cd $HOME/vim-src && make install )
+    fi
   fi
 
   # Install vint.
@@ -50,4 +60,4 @@ after_success: |
   set -e
 
   cd "$HOME/.vim/pack/plugin/start/$(basename "$TRAVIS_BUILD_DIR")"
-  codecov -X search gcov pycov -f coverage.xml --required
+  codecov -X search gcov pycov -f coverage.xml
