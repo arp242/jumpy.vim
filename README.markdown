@@ -20,10 +20,11 @@ Currently supported filetype with their patterns:
 
     Filetype     What it matches                     Regexp
     --------     ---------------                     ------
-    c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
     css          Selector                            ^[^ \t{}/]
+    c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
     diff         File                                ^diff 
     git          Commit in git log                   ^commit 
+    gomod        Replace/require                     \v^%(require|replace) 
     go           Top-level declaration               \v^%(func|type|var|const|import)
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*
     html         Common block elements               \v\<%(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
