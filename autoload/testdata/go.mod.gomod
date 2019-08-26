@@ -1,0 +1,10 @@
+module test
+
+go 1.12
+
+replace example.com/org => replace
+
+require (
+    github.com/example/test v1.0.0
+)
+
