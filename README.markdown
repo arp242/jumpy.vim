@@ -38,7 +38,7 @@ Currently supported filetype with their patterns:
     ruby         Function, class, or module          \v^\s*%(def|class|module)>
     sh           Function declaration                ^\w\+()[ \n]*{
     sql          CREATE and BEGIN                    \c\v^\s*%(create|begin)>
-    tex          Beginning of a section              \v\s*\\%(%(sub)*section|chapter|part|appendix|%(front|back|main)matter)>
+    tex          Beginning of a section              \v^\s*\\%(%(sub)*section|chapter|part|appendix|%(front|back|main)matter)>
     vim          Function/augroup definition         \v^\s*%(fu%[nction]>|aug%[roup]\s%(\s*[eE][nN][dD])@!)
     yaml         Top-level key                       ^\w\+:
 
