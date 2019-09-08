@@ -8,7 +8,7 @@ section.
 Use `g:jumpy_map` to configure the mappings:
 
     let g:jumpy_map = [']]', '[[']                     Defaults.
-    let g:jumpy_map = ['<Leader>[', '<Leader>]']       Use Leader.
+    let g:jumpy_map = ['<Leader>]', '<Leader>[']       Use Leader.
     let g:jumpy_map = 0                                Don't map anything.
 
 Use `g:jumpy_after` to run a command after after jumping:
