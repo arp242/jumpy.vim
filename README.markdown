@@ -20,12 +20,12 @@ Currently supported filetype with their patterns:
 
     Filetype     What it matches                     Regexp
     --------     ---------------                     ------
-    css          Selector                            ^[^ \t{}/]
     c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
+    css          Selector                            ^[^ \t{}/]
     diff         File                                ^diff 
     git          Commit in git log                   ^commit 
-    gomod        Replace/require                     \v^%(require|replace) 
     go           Top-level declaration               \v^%(func|type|var|const|import)
+    gomod        Replace/require                     \v^%(require|replace) 
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*
     html         Common block elements               \v\<%(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
     javascript   Function declaration/expression     \v^\s*%(function\s*\w|%(var|let) \w*\s+\=\s+%(function\(|\(.{-}\)\s*\=\>\s*))
@@ -39,6 +39,7 @@ Currently supported filetype with their patterns:
     sh           Function declaration                ^\w\+()[ \n]*{
     sql          CREATE and BEGIN                    \c\v^\s*%(create|begin)>
     tex          Beginning of a section              \v^\s*\\%(%(sub)*section|chapter|part|appendix|%(front|back|main)matter)>
+    vcl          Function or backend.                \v^%(sub|backend)
     vim          Function/augroup definition         \v^\s*%(fu%[nction]>|aug%[roup]\s%(\s*[eE][nN][dD])@!)
     yaml         Top-level key                       ^\w\+:
 
