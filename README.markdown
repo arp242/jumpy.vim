@@ -27,7 +27,7 @@ Currently supported filetype with their patterns:
     go           Top-level declaration               \v^%(func|type|var|const|import)
     gomod        Replace/require                     \v^%(require|replace) 
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*
-    html         Common block elements               \v\<%(head|body|style|script|div|ul|article|section|main|header|footer|h\d)[> ]
+    html         Common block elements               \v\<%(head|body|style|script|div|ul|article|section|main|header|footer|form|fieldset|h\d)[> ]
     javascript   Function declaration/expression     \v^\s*%(function\s*\w|%(var|let) \w*\s+\=\s+%(function\(|\(.{-}\)\s*\=\>\s*))
     lua          Function definition                 ^\s*function\>
     make         Target                              ^[a-zA-Z0-9 _-]\+:
