@@ -1,0 +1,2 @@
+" Section
+call jumpy#map('^\[.\{-}]')

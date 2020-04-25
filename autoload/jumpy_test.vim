@@ -1,6 +1,7 @@
 fun! Test_jumpy() abort
 	let l:tests = {
 		\ 'Makefile':      [4, 7],
+		\ '.gitconfig':    [2, 5, 8],
 		\ 'go.mod.gomod':  [5, 7],
 		\ 'test.c':        [3, 12, 15],
 		\ 'test.css':      [3, 5, 7, 9],

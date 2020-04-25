@@ -1,0 +1,9 @@
+
+[core]
+eol       = lf           
+
+[url "git@github.com:"]
+insteadOf = https://github.com/
+
+[http]  # Comment
+cookiefile = ~/.config/git/cookies

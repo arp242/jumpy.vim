@@ -24,6 +24,7 @@ Currently supported filetype with their patterns:
     css          Selector                            ^[^ \t{}/]
     diff         File                                ^diff 
     git          Commit in git log                   ^commit 
+    gitconfig    Section                             ^\[.\{-}]
     go           Top-level declaration               \v^%(func|type|var|const|import)
     gomod        Replace/require                     \v^%(require|replace) 
     help         Help tag definition                 \*[a-zA-Z0-9:_<> *-]\+\*
