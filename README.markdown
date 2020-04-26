@@ -23,7 +23,7 @@ Currently supported filetype with their patterns:
     c            Function/typedef opening brace      \v%(^\{|^\s@!.*\{$)
     css          Selector                            ^[^ \t{}/]
     diff         File                                ^diff 
-    git          Commit in git log                   ^commit 
+    git          Commit in git log                   ^\v%(commit|diff) 
     gitconfig    Section                             ^\[.\{-}]
     go           Top-level declaration               \v^%(func|type|var|const|import)
     gomod        Replace/require                     \v^%(require|replace) 

@@ -1,2 +1,2 @@
 " Commit in git log
-call jumpy#map('^commit ')
+call jumpy#map('^\v%(commit|diff) ')
