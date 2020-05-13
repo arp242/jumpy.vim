@@ -1,2 +1,3 @@
 " Header and horizontal rule
-call jumpy#map('\v%(^\=\=\=|^---|^#{1,6})')
+"
+call jumpy#map('\v%(^\=\=\=|^---|^#{1,6})', '')

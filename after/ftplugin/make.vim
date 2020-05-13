@@ -1,2 +1,3 @@
 " Target
-call jumpy#map('^[a-zA-Z0-9 _-]\+:')
+"
+call jumpy#map('^[a-zA-Z0-9 _-]\+:', '')

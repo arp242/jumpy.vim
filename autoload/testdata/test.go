@@ -1,5 +1,19 @@
+// Maybe a license comment?
 
-func foo() { }
+// Package comment.
+package main
+
+import (
+	"os"
+)
+
+func foo() {
+	if true {
+	}
+
+	for i := range os.Args {
+	}
+}
 element { }
 
 type x struct { }

@@ -1,4 +1,4 @@
-fun! Test_jumpy() abort
+fun! Test_jumpy_section() abort
 	let l:tests = {
 		\ 'Makefile':      [4, 7],
 		\ '.gitconfig':    [2, 5, 8],
@@ -60,6 +60,56 @@ fun! Test_jumpy() abort
 
 			if l:want isnot line('.')
 				call Errorf("wrong line for %s [[\nwant: line %d -> %s\ngot:  line %d -> %s",
+							\ fnamemodify(l:file, ':t'),
+							\ l:want, getline(l:want),
+							\ line('.'), getline('.'))
+			endif
+		endfor
+	endfor
+endfun
+
+fun! Test_jumpy_paragraph() abort
+		\ 'test.go':       [2, 5, 7],
+		\ 'test.vim':      [2, 6, 16, 21, 26],
+	\ }
+
+	for [l:file, l:wantlines] in items(l:tests)
+		let l:file = g:test_packdir . '/autoload/testdata/' . l:file
+		if !filereadable(l:file)
+			return Errorf('unable to read "%s"', l:file)
+		endif
+		exe 'e ' . l:file
+		if &filetype is# ''
+			let &filetype = fnamemodify(l:file, ':e')
+		endif
+
+		" Should jump to last line if there are no more matches (also tests if
+		" there are no matches after wantlines).
+		" This is why test files should end with a blank line!
+		let l:wantlines = add(l:wantlines, line('$'))
+		normal! gg
+		for l:want in l:wantlines
+			" vint: -ProhibitCommandRelyOnUser
+			normal }
+
+			if l:want isnot line('.')
+				call Errorf("wrong line for %s }\nwant: line %d -> %s\ngot:  line %d -> %s",
+							\ fnamemodify(l:file, ':t'),
+							\ l:want, getline(l:want),
+							\ line('.'), getline('.'))
+			endif
+		endfor
+
+		" Test going backwards
+		let l:wantlines = [1] + l:wantlines[:-2]
+		call reverse(l:wantlines)
+		normal! G
+		for l:want in l:wantlines
+			" vint: -ProhibitCommandRelyOnUser
+			normal {
+
+			if l:want isnot line('.')
+				call Errorf("wrong line for %s {\nwant: line %d -> %s\ngot:  line %d -> %s",
 							\ fnamemodify(l:file, ':t'),
 							\ l:want, getline(l:want),
 							\ line('.'), getline('.'))

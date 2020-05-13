@@ -1,17 +1,28 @@
-fun! jumpy#map(pattern) abort
-	let l:map = get(g:, 'jumpy_map', [']]', '[['])
+fun! jumpy#map(decl, stmt) abort
+	let l:map = get(g:, 'jumpy_map', [']]', '[[', '}', '{'])
 	if l:map is 0
 		return
 	endif
 
 	let l:after = get(g:, 'jumpy_after', '')
 
-	for l:mode in ['n', 'o', 'x']
-		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>%s',
-					\ l:mode, l:map[0], fnameescape(a:pattern), l:mode, l:after)
-		exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>%s',
-					\ l:mode, l:map[1], fnameescape(a:pattern), l:mode, l:after)
-	endfor
+	if l:map[0] isnot '' && l:map[1] isnot# '' && a:decl isnot# ''
+		for l:mode in ['n', 'o', 'x']
+			exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>%s',
+						\ l:mode, l:map[0], fnameescape(a:decl), l:mode, l:after)
+			exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>%s',
+						\ l:mode, l:map[1], fnameescape(a:decl), l:mode, l:after)
+		endfor
+	endif
+
+	if l:map[2] isnot '' && l:map[3] isnot# '' && a:stmt isnot# ''
+		for l:mode in ['n', 'o', 'x']
+			exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "next")<CR>%s',
+						\ l:mode, l:map[2], fnameescape(a:stmt), l:mode, l:after)
+			exe printf('%snoremap <buffer> <silent> %s :<C-u>call jumpy#jump("%s", "%s", "prev")<CR>%s',
+						\ l:mode, l:map[3], fnameescape(a:stmt), l:mode, l:after)
+		endfor
+	endif
 endfun
 
 fun! jumpy#jump(pattern, mode, dir) abort

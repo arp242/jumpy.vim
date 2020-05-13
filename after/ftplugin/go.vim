@@ -1,2 +1,3 @@
 " Top-level declaration
-call jumpy#map('\v^%(func|type|var|const|import)')
+" if, for, and go statement
+call jumpy#map('\v^%(func|type|var|const|import|package)', '\v^\s+%(if|for|go) ')

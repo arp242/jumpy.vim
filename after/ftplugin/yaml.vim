@@ -1,2 +1,3 @@
 " Top-level key
-call jumpy#map('^\w\+:')
+"
+call jumpy#map('^\w\+:', '')

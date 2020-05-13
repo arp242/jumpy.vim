@@ -1,2 +1,3 @@
 " Function definition
-call jumpy#map('^\s*function\>')
+"
+call jumpy#map('^\s*function\>', '')
