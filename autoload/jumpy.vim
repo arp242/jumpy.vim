@@ -1,5 +1,5 @@
 fun! jumpy#map(decl, stmt) abort
-	let l:map = get(g:, 'jumpy_map', [']]', '[[', '}', '{'])
+	let l:map = get(g:, 'jumpy_map', [']]', '[[', 'g]', 'g['])
 	if l:map is 0
 		return
 	endif

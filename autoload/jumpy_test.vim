@@ -69,11 +69,8 @@ fun! Test_jumpy_section() abort
 endfun
 
 fun! Test_jumpy_paragraph() abort
-	return
-
 	let l:tests = {
 		\ 'test.go':       [11, 14],
-		\ 'test.vim':      [2, 6, 16, 21, 26],
 	\ }
 
 	for [l:file, l:wantlines] in items(l:tests)
@@ -93,10 +90,10 @@ fun! Test_jumpy_paragraph() abort
 		normal! gg
 		for l:want in l:wantlines
 			" vint: -ProhibitCommandRelyOnUser
-			normal }
+			normal g]
 
 			if l:want isnot line('.')
-				call Errorf("wrong line for %s }\nwant: line %d -> %s\ngot:  line %d -> %s",
+				call Errorf("wrong line for %s g]\nwant: line %d -> %s\ngot:  line %d -> %s",
 							\ fnamemodify(l:file, ':t'),
 							\ l:want, getline(l:want),
 							\ line('.'), getline('.'))
@@ -109,10 +106,10 @@ fun! Test_jumpy_paragraph() abort
 		normal! G
 		for l:want in l:wantlines
 			" vint: -ProhibitCommandRelyOnUser
-			normal {
+			normal g[
 
 			if l:want isnot line('.')
-				call Errorf("wrong line for %s {\nwant: line %d -> %s\ngot:  line %d -> %s",
+				call Errorf("wrong line for %s g[\nwant: line %d -> %s\ngot:  line %d -> %s",
 							\ fnamemodify(l:file, ':t'),
 							\ l:want, getline(l:want),
 							\ line('.'), getline('.'))

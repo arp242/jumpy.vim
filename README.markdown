@@ -2,16 +2,16 @@
 [![Build Status](https://travis-ci.org/arp242/jumpy.vim.svg?branch=master)](https://travis-ci.org/arp242/jumpy.vim)
 [![codecov](https://codecov.io/gh/arp242/jumpy.vim/branch/master/graph/badge.svg)](https://codecov.io/gh/arp242/jumpy.vim)
 
-Filetype-specific mappings for `[[`, `]]`, `{`, and `}` to jump to the next or
+Filetype-specific mappings for `[[`, `]]`, `g[`, and `g]` to jump to the next or
 previous section.
 
 `[[` and `]]` jumps between declarations such as functions, classes, etc.
 
-`{` and `}` jumps between sections, such as `if`, `for`, `while` statements.
+`g[` and `g]` jumps between sections, such as `if`, `for`, `while` statements.
 
 Use `g:jumpy_map` to configure the mappings:
 
-    let g:jumpy_map = [']]', '[[', '}', '{']                                 Defaults.
+    let g:jumpy_map = [']]', '[[', 'g]', 'g[']                               Defaults.
     let g:jumpy_map = ['<Leader>]', '<Leader>[', '<Leader>}', '<Leader>{']   Use Leader.
     let g:jumpy_map = [']]', ']]', '', '']                                   Map only [[ and ]]
     let g:jumpy_map = 0                                                      Don't map anything.
@@ -23,8 +23,8 @@ Use `g:jumpy_after` to run a command after after jumping:
 
 Currently supported filetype with their patterns:
 
-    Filetype     [[ and ]]                           { and }
-    --------     ---------                           ------
+    Filetype     [[ and ]]                           g[ and g]
+    --------     ---------                           ---------
     c            Function/typedef opening brace
     css          Selector
     diff         File                                Hunk
@@ -58,7 +58,7 @@ Adding a new filetype
 
 1. Call `jumpy#map()` in `after/ftplugin/<ft>.vim`; the first line is a comment
    documenting the [[ and ]] behaviour, the second line is expected to document
-   { and } behaviour.
+   g[ and g] behaviour.
 
 2. Add a test in `autoload/jumpy_test.vim`; the key is a filename from
    `autoload/testdata/test.ext` and the value a list of line numbers you expect
@@ -71,4 +71,4 @@ Adding a new filetype
 
 Alternatively, you can use a `Filetype` autocmd in your local vimrc file:
 
-    autocmd Filetype myft call jumpy#map('[[ ]] pattern', '{ } pattern')
+    autocmd Filetype myft call jumpy#map('[[ ]] pattern', 'g[ g] pattern')
