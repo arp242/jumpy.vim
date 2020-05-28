@@ -6,7 +6,7 @@ fun! Test_jumpy_section() abort
 		\ 'test.c':        [3, 12, 15],
 		\ 'test.css':      [3, 5, 7, 9],
 		\ 'test.diff':     [2, 10],
-		\ 'test.go':       [2, 5, 7],
+		\ 'test.go':       [4, 6, 10, 19, 21],
 		\ 'test.help':     [2, 4],
 		\ 'test.html':     [2, 4, 8],
 		\ 'test.js':       [3, 5, 9, 11],
@@ -69,7 +69,10 @@ fun! Test_jumpy_section() abort
 endfun
 
 fun! Test_jumpy_paragraph() abort
-		\ 'test.go':       [2, 5, 7],
+	return
+
+	let l:tests = {
+		\ 'test.go':       [11, 14],
 		\ 'test.vim':      [2, 6, 16, 21, 26],
 	\ }
 
