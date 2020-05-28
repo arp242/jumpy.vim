@@ -16,7 +16,7 @@ fun! Test_jumpy_section() abort
 		\ 'test.py':       [2, 4, 5, 8, 9],
 		\ 'test.qf':       [2, 3, 6, 7, 8],
 		\ 'test.rb':       [2, 5, 6, 7],
-		\ 'test.sh':       [2, 5],
+		\ 'test.sh':       [2, 5, 10],
 		\ 'test.sql':      [2, 5, 7],
 		\ 'test.tex':      [3, 5, 6, 8, 12, 13, 14, 17, 19],
 		\ 'test.vim':      [2, 6, 16, 21, 26],
