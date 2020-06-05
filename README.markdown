@@ -30,7 +30,7 @@ Currently supported filetype with their patterns:
     diff         File                                Hunk
     git          Commit in git log
     gitconfig    Section
-    go           Top-level declaration               if, for, and go statement
+    go           Top-level declaration               if, for, switch, and go statement
     gomod        Replace/require
     help         Help tag definition
     html         Common block elements
