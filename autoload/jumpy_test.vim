@@ -21,6 +21,7 @@ fun! Test_jumpy_section() abort
 		\ 'test.tex':      [3, 5, 6, 8, 12, 13, 14, 17, 19],
 		\ 'test.vim':      [2, 6, 16, 21, 26],
 		\ 'test.yaml':     [2, 5],
+		\ 'test.zsh':      [3, 6, 11, 15, 20, 25, 30, 34],
 	\ }
 
 	for [l:file, l:wantlines] in items(l:tests)

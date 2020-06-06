@@ -42,12 +42,13 @@ Currently supported filetype with their patterns:
     python       Function, method, class
     qf           Next/prev filename
     ruby         Function, class, or module
-    sh           Function declaration
+    sh           POSIX function declaration          if, for, while, until, case
     sql          CREATE and BEGIN
     tex          Beginning of a section
-    vcl          Function or backend.
+    vcl          Function or backend
     vim          Function/augroup definition         if, for, while, and try
     yaml         Top-level key
+    zsh          Function declaration                if, for, while, until, case, foreach, repeat, select
 
 This overrides mappings for some filetypes in Vim's standard distribution for
 consistency and usefulness (e.g. `ft=vim` behaves different when it can't find a
@@ -56,18 +57,19 @@ match, `ft=sql` only jumps to `BEGIN` and not `CREATE`, etc.)
 Adding a new filetype
 ---------------------
 
-1. Call `jumpy#map()` in `after/ftplugin/<ft>.vim`; the first line is a comment
-   documenting the [[ and ]] behaviour, the second line is expected to document
-   g[ and g] behaviour.
+1. Add `after/ftplugin/<ft>.vim`; the first line should be a a comment
+   documenting the [[ and ]] behaviour, and the second line a comment
+   documenting g[ and g].
 
-2. Add a test in `autoload/jumpy_test.vim`; the key is a filename from
+2. Call `jumpy#map('[[ ]] pattern', 'g[ g] pattern')`.
+
+3. Add a test in `autoload/jumpy_test.vim`; the key is a filename from
    `autoload/testdata/test.ext` and the value a list of line numbers you expect
    it to jump to. The plugin is tested with
    [testing.vim](https://github.com/arp242/testing.vim); running the full test
    suite should be as easy as `tvim test ./...`.
 
-3. Use `./tbl` to create the table; the first line is used as the "what it
-   matches" column.
+4. Use `./tbl` to create the table.
 
 Alternatively, you can use a `Filetype` autocmd in your local vimrc file:
 

@@ -1,3 +1,3 @@
-" Function or backend.
+" Function or backend
 "
 call jumpy#map('\v^%(sub|backend)', '')

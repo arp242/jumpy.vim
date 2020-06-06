@@ -1,6 +1,3 @@
-" Function declaration
-"
-" Note we don't support 'function foo() {' bash-ism; it's identical to 'foo() {'
-" and there's no reason for it to exist.
-" TODO: also add top-level if/for/case?
-call jumpy#map('^\w\+ *()[ \n]*{', '')
+" POSIX function declaration
+" if, for, while, until, case
+call jumpy#map('^[a-zA-Z_]\w\+ *()[ \n]*{', '\v^\s*(if|for|while|until|case)')
