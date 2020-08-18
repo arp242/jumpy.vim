@@ -26,6 +26,7 @@ Currently supported filetype with their patterns:
     Filetype     [[ and ]]                           g[ and g]
     --------     ---------                           ---------
     c            Function/typedef opening brace
+    crystal      Method, class, or module
     css          Selector
     diff         File                                Hunk
     git          Commit in git log
@@ -41,7 +42,7 @@ Currently supported filetype with their patterns:
     php          Function, class, interface
     python       Function, method, class
     qf           Next/prev filename
-    ruby         Function, class, or module
+    ruby         Method, class, or module
     sh           POSIX function declaration          if, for, while, until, case
     sql          CREATE and BEGIN
     tex          Beginning of a section
