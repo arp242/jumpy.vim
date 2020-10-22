@@ -3,7 +3,7 @@ fun! Test_jumpy_section() abort
 		\ 'Makefile':      [4, 7],
 		\ '.gitconfig':    [2, 5, 8],
 		\ 'go.mod.gomod':  [5, 7],
-		\ 'test.c':        [3, 12, 15],
+		\ 'test.c':        [3, 12, 18],
 		\ 'test.cr':       [3, 6, 7, 8],
 		\ 'test.css':      [3, 5, 7, 9],
 		\ 'test.diff':     [2, 10],
@@ -72,6 +72,7 @@ endfun
 
 fun! Test_jumpy_paragraph() abort
 	let l:tests = {
+		\ 'test.c':        [4, 13],
 		\ 'test.go':       [11, 14],
 	\ }
 

@@ -10,6 +10,9 @@ int main() {
 void
 f()
 {
+	do {
+
+	} while (1)
 }
 
 typedef struct {

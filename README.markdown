@@ -25,7 +25,7 @@ Currently supported filetype with their patterns:
 
     Filetype     [[ and ]]                           g[ and g]
     --------     ---------                           ---------
-    c            Function/typedef opening brace
+    c            Function/typedef opening brace      if, for, switch, while, and do statement
     crystal      Method, class, or module
     css          Selector
     diff         File                                Hunk
