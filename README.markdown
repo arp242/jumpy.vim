@@ -47,7 +47,7 @@ Currently supported filetype with their patterns:
     sql          CREATE and BEGIN
     tex          Beginning of a section
     vcl          Function or backend
-    vim          Function/augroup definition         if, for, while, and try
+    vim          Function, command, and augroup      if, for, while, and try
     yaml         Top-level key
     zsh          Function declaration                if, for, while, until, case, foreach, repeat, select
 
