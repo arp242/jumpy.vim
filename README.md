@@ -27,6 +27,7 @@ Currently supported filetype with their patterns:
     --------     ---------                           ---------
     c            Function/typedef opening brace      if, for, switch, while, and do statement
     crystal      Method, class, or module
+    cs           Class, class method                 call jumpy#map('\v^\s*%(public|private) ', '')
     css          Selector
     diff         File                                Hunk
     git          Commit in git log
