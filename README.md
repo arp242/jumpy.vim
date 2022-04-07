@@ -34,6 +34,7 @@ Currently supported filetype with their patterns:
     gitconfig    Section
     go           Top-level declaration               if, for, switch, and go statement
     gomod        Replace/require
+    graphql      GraphQL structure.
     help         Help tag definition
     html         Common block elements
     javascript   Function declaration/expression
