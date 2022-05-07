@@ -25,9 +25,10 @@ Currently supported filetype with their patterns:
 
     Filetype     [[ and ]]                           g[ and g]
     --------     ---------                           ---------
+    awk          Start of pattern-action
     c            Function/typedef opening brace      if, for, switch, while, and do statement
     crystal      Method, class, or module
-    cs           Class, class method                 call jumpy#map('\v^\s*%(public|private) ', '')
+    cs           Class, class method
     css          Selector
     diff         File                                Hunk
     git          Commit in git log
@@ -48,6 +49,7 @@ Currently supported filetype with their patterns:
     sh           POSIX function declaration          if, for, while, until, case
     sql          CREATE and BEGIN
     tex          Beginning of a section
+    toml         Table
     vcl          Function or backend
     vim          Function, command, and augroup      if, for, while, and try
     yaml         Top-level key

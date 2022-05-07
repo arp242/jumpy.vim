@@ -12,7 +12,6 @@ list() {
 	done
 }
 
-#printf "$fmt" 'Filetype' 'What it matches' 'Regexp'
 printf "$fmt" 'Filetype' '[[ and ]]' 'g[ and g]'
 printf "$fmt" '--------' '---------' '---------'
 
