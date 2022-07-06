@@ -1,9 +1,4 @@
-[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
-[![Build Status](https://travis-ci.org/arp242/jumpy.vim.svg?branch=master)](https://travis-ci.org/arp242/jumpy.vim)
-[![codecov](https://codecov.io/gh/arp242/jumpy.vim/branch/master/graph/badge.svg)](https://codecov.io/gh/arp242/jumpy.vim)
-
-Filetype-specific mappings for `[[`, `]]`, `g[`, and `g]` to jump to the next or
-previous section.
+Mappings for `[[`, `]]`, `g[`, and `g]` to jump to the next or previous section.
 
 `[[` and `]]` jumps between declarations such as functions, classes, etc.
 
@@ -11,17 +6,22 @@ previous section.
 
 Use `g:jumpy_map` to configure the mappings:
 
-    let g:jumpy_map = [']]', '[[', 'g]', 'g[']                               Defaults.
-    let g:jumpy_map = ['<Leader>]', '<Leader>[', '<Leader>}', '<Leader>{']   Use Leader.
+    let g:jumpy_map = [']]', '[[', 'g]', 'g[']                               Default
+    let g:jumpy_map = ['<Leader>]', '<Leader>[', '<Leader>}', '<Leader>{']   Use Leader
     let g:jumpy_map = [']]', ']]', '', '']                                   Map only [[ and ]]
-    let g:jumpy_map = 0                                                      Don't map anything.
+    let g:jumpy_map = 0                                                      Don't map anything
 
 Use `g:jumpy_after` to run a command after after jumping:
 
-    let g:jumpy_after = ''                             Default.
-    let g:jumpy_after = 'zz'                           Center the screen.
+    let g:jumpy_after = ''                             Default
+    let g:jumpy_after = 'zz'                           Centre the screen
 
-Currently supported filetype with their patterns:
+Currently supported filetypes are listed below; if there isn't a pattern defined
+for a filetype it will match the first non-indented line that starts with a
+letter for `[[` and `]]` as a fallback (this trick was ~stolen~ copied [from
+here][fb]).
+
+[fb]: https://vi.stackexchange.com/a/37890/51
 
     Filetype     [[ and ]]                           g[ and g]
     --------     ---------                           ---------
@@ -61,7 +61,6 @@ match, `ft=sql` only jumps to `BEGIN` and not `CREATE`, etc.)
 
 Adding a new filetype
 ---------------------
-
 1. Add `after/ftplugin/<ft>.vim`; the first line should be a a comment
    documenting the [[ and ]] behaviour, and the second line a comment
    documenting g[ and g].
@@ -74,8 +73,8 @@ Adding a new filetype
    [testing.vim](https://github.com/arp242/testing.vim); running the full test
    suite should be as easy as `tvim test ./...`.
 
-4. Use `./tbl` to create the table.
+4. Use `./tbl` to create the table to update the README.
 
-Alternatively, you can use a `Filetype` autocmd in your local vimrc file:
+Alternatively, you can use a `Filetype` autocmd in your vimrc file:
 
     autocmd Filetype myft call jumpy#map('[[ ]] pattern', 'g[ g] pattern')
