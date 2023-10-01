@@ -6,6 +6,17 @@ Much text!
 
 .id { }
 
+===
 ---
+***
+___
+
+==
+
+a #tag in the #body-text
+
+--
+
+*
 
 
