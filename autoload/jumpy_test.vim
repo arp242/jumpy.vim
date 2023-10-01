@@ -12,7 +12,7 @@ fun! Test_jumpy_section() abort
 		\ 'test.html':     [2, 4, 8],
 		\ 'test.js':       [3, 5, 9, 11],
 		\ 'test.lua':      [2, 5],
-		\ 'test.markdown': [4, 5, 9],
+		\ 'test.markdown': [4, 5, 9, 10, 11, 12],
 		\ 'test.php':      [4, 5, 8, 11, 15, 18, 20],
 		\ 'test.py':       [2, 4, 5, 8, 9],
 		\ 'test.qf':       [2, 3, 6, 7, 8],
