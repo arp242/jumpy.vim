@@ -1,3 +1,3 @@
 " File
 " Hunk
-call jumpy#map('^diff ', '^@@ ')
+call jumpy#map('^--- ', '^@@ ')
