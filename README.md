@@ -31,6 +31,7 @@ here][fb]).
     cs           Class, class method
     css          Selector
     diff         File                                Hunk
+    dosini       Section
     git          Commit in git log
     gitconfig    Section
     go           Top-level declaration               if, for, switch, and go statement
@@ -38,7 +39,6 @@ here][fb]).
     graphql      GraphQL structure.
     help         Help tag definition
     html         Common block elements
-    ini          Section
     javascript   Function declaration/expression
     lua          Function definition
     make         Target
