@@ -38,6 +38,7 @@ here][fb]).
     graphql      GraphQL structure.
     help         Help tag definition
     html         Common block elements
+    ini          Section
     javascript   Function declaration/expression
     lua          Function definition
     make         Target

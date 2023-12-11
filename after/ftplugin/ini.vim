@@ -1,0 +1,3 @@
+" Section
+"
+call jumpy#map('^[', '')
